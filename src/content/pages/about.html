@@ -22,13 +22,14 @@ eleventyNavigation:
     <section id="int-hero">
         <h1 id="home-h">About Us</h1>
         <picture>
-            <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-            <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
+            <source media="(max-width: 600px)" srcset="/assets/images/hero.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/hero.jpg">
+            <img aria-hidden="true" decoding="async" src="/assets/images/hero.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
         </picture>
 
     </section>
 
+    
     <!-- ============================================ -->
     <!--                 Side By Side                 -->
     <!-- ============================================ -->
@@ -38,39 +39,51 @@ eleventyNavigation:
             <!-- Left Image Section -->
             <div class="cs-left">
                 <picture class="cs-picture cs-picture1">
-                    <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="cabinets" loading="lazy" width="400" height="563">
+                    <source media="(max-width: 600px)" srcset="/assets/images/background.png">
+                    <source media="(min-width: 601px)" srcset="/assets/images/background.png">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/background.png" alt="cabinets" loading="lazy" width="400" height="563">
                 </picture>
                 <picture class="cs-picture cs-picture2">
-                    <source media="(max-width: 600px)" srcset="/assets/images/construction-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/construction.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/construction.jpg" alt="house" loading="lazy" width="400" height="563">
+                    <source media="(max-width: 600px)" srcset="/assets/images/cross.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/cross.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/cross.jpg" alt="house" loading="lazy" width="400" height="563">
                 </picture>
             </div>
             <!-- Right Content Section-->
             <div class="cs-right">
                 <span class="cs-topper">About Us</span>
-                <h2 class="cs-title">About Company Title</h2>
+                <h2 class="cs-title">What We Believe</h2>
                 <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
+                    We believe in God the Father Almighty, creator of heaven and earth. We believe in Jesus Christ, his Son, our Lord, who was conceived by the Holy Spirit and born of the virgin Mary.
                 </p>
                 <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
+                    He suffered under Pontius Pilate, was crucified, died and was buried; he descended to hell. The third day he rose again from the dead. He ascended to heaven and is seated at the right hand of God the Father Almighty.
                 </p>
-                <div class="cs-flex-group">
+                <p class="cs-text">
+                    From there he will come to judge the living and the dead. We believe in the Holy Spirit, the holy church, the communion of saints, the forgiveness of sins, the resurrection of the body, and the life everlasting. Amen.
+                </p>
+                <p class="cs-text">
+                    Our Mission Statement: We exist to share the message of Christ Jesus and to be faithful with the talents He has given us by pointing to the cross.
+                </p>
+                <!-- <div class="cs-flex-group">
                     <p class="cs-flex-p">
                         In consequat tincidunt turpis sit amet imperdiet. Praesent Classei consequat tincidunt turpis sit amet imperdiet for mind.
                     </p>
                     <span class="cs-name">Justin Time</span>
                     <span class="cs-job">CEO-Founder</span>
-                    <img class="cs-quote-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg" alt="gavel" width="136" height="77">
-                </div>
-                <a href="/projects" class="cs-button-solid">Our Projects</a>
+                    <img 
+                    class="cs-quote-icon"
+                    loading="lazy"
+                    decoding="async"
+                    src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg"
+                    alt="gavel"
+                    width="136"
+                    height="77"/>
+                </div> -->
+                <!-- <a href="/about" class="cs-button-solid">More About Us</a> -->
             </div>
         </div>
     </section>
 
-    {% include 'components/cta.html' %}
 
 {% endblock %}

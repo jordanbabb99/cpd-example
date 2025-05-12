@@ -12,7 +12,7 @@ const configServer = require("./src/config/server");
 // Other
 const filterPostDate = require("./src/config/postDate");
 const isProduction = configServer.isProduction;
-
+const history = require("connect-history-api-fallback");
 
 module.exports = function (eleventyConfig) {
     /**=====================================================================
@@ -31,8 +31,8 @@ module.exports = function (eleventyConfig) {
      *  JS EXTENSION
      *  Sets up JS files as an eleventy template language, which are compiled by esbuild. Allows bundling and minification of JS
      */
-    eleventyConfig.addTemplateFormats("js");
-    eleventyConfig.addExtension("js", configJs);
+    // eleventyConfig.addTemplateFormats("js");
+    // eleventyConfig.addExtension("js", configJs);
     /**=====================================================================
                                 END EXTENSIONS
     =======================================================================*/
@@ -69,7 +69,6 @@ module.exports = function (eleventyConfig) {
                                 END PLUGINS
     =======================================================================*/
 
-
     /**======================================================================
        PASSTHROUGHS - Copy source files to /public with no 11ty processing
     ========================================================================*/
@@ -77,12 +76,12 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addPassthroughCopy("./src/assets", {
         filter: [
-            "**/*",
-            "!**/*.js"
+            "**/*"
         ]
     });
     eleventyConfig.addPassthroughCopy("./src/admin");
     eleventyConfig.addPassthroughCopy("./src/_redirects");
+    eleventyConfig.addPassthroughCopy("./Vector-Tiles-Google-Maps/dist");
     /**=====================================================================
                               END PASSTHROUGHS
     =======================================================================*/
@@ -123,7 +122,24 @@ module.exports = function (eleventyConfig) {
     /**=====================================================================
                               END SERVER SETTINGS
     =======================================================================*/
-
+    eleventyConfig.setBrowserSyncConfig({
+        server: {
+          baseDir: "public",   // your Eleventy output folder
+          middleware: [
+            history({
+              // only rewrite URLs that start with /properties/
+              rewrites: [
+                {
+                  from: /^\/properties\/.*$/,
+                  to:   "/properties/index.html"
+                }
+              ],
+              // by default it still tries to serve static assets before fallback
+              // verbose: true // (uncomment if you want debug logs in the console)
+            })
+          ]
+        }
+      });
     return {
         dir: {
             input: "src",

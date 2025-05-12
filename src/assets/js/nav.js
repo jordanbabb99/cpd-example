@@ -1,3 +1,8 @@
+
+
+
+
+
 // Select DOM elements
 const bodyElement = document.querySelector("body");
 const navbarMenu = document.querySelector("#cs-navigation");
